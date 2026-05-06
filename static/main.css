@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.637), rgba(0, 0, 0, 0.637)),url(image/backgroundmmu.jpg);
+    background-size: cover;
+    min-height: 605px;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+
+}
+ 
+
+.container{
+    width: 89%;
+    height: 50vh;
+    margin: 20px auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main{
+    align-items: center;
+    position: relative;
+    color: white;
+}
+
+
+h1{
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0;
+   
+}
+
+h2{
+    color: whitesmoke;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.main p{
+
+    color: whitesmoke;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.main button{
+    background: none;
+    border: 2px solid #fefefe;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    width: 200px;
+    margin-top: 20px 0;
+    margin: 20px;
+    margin-left: 61px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    border-radius: 10px;
+    color: white;
+    
+}
+
+.main button p{
+    color: white;
+}
+
+button:hover{
+    color: #fff;
+}
+
+button::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    Height: 100%;
+    background: #0a4567;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+
+}
+
+button::before{
+    transform: scaleX(0);
+}
+
+button:hover::before{
+    transform: scaleX(1)
+}

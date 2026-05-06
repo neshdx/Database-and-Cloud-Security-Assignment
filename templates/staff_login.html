@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/static/login.css" type="text/css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Login</title>
+</head>
+<body>
+
+    <form class="container"  method="POST">
+        <h1>Staff Login</h1>
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
+        <label for="staff_id">Staff ID:</label>
+        <input type="text" name="staff_id" id="staff_id" required>
+        <br>
+        <label for="staff_password">Password:</label>
+        <input type="password" name="staff_password" id="staff_password" required>
+        <br>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="/staff_register">Sign up here</a></p>
+    </form>
+    
+</body>
+</html>

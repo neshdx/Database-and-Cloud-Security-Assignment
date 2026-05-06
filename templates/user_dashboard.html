@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/user_dashboard.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <div class="top-container">
+        <h1>User Dashboard</h1>
+        <a href="/logout">
+            <button class="logout-button">Logout</button>
+        </a>
+    </div>
+
+    <div class="welcome-message">
+        <h1>Welcome, {{ session['username'] }}!</h1>
+    </div>
+
+    <div class="main-content">
+        <a href="/view_notifications">
+            <button class="btn">View Notifications</button>
+        </a>
+
+        <a href="/collection">
+            <button class="btn">Collection</button>
+        </a>
+
+        <a href="/submit_feedback">
+            <button class="btn">Submit Feedback</button>
+        </a>
+    </div>
+</body>
+</html>

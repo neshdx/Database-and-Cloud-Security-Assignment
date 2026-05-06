@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/user_collection.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Page</title>
+</head>
+<body>
+    <div class="top-container">
+        <h1>Collection Page</h1>
+    </div>
+    <div class="main-content">
+        <h2>Your Parcels</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Parcel ID</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for parcel in parcels %}
+            <tr>
+                <td>{{ parcel.parcel_id }}</td>
+                <td>{{ 'Collected' if parcel.collected else 'Not Collected' }}</td>
+                <td>
+                    {% if not parcel.collected %}
+                    <form action="{{ url_for('mark_collected', parcel_id=parcel.id) }}" method="POST">
+                        <button type="submit">Mark as Collected</button>
+                    </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ url_for('student_dashboard') }}">
+        <button class="btn">Back to Dashboard</button>
+    </a>
+    </div> 
+
+</body>
+</html>

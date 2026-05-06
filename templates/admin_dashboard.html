@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/dashboard.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <!-- Top container for title and logout button -->
+    <div class="top-container">
+        <h1>Admin Dashboard</h1>
+        <a href="{{ url_for('logout') }}">
+            <button class="logout-button">Logout</button>
+        </a>
+    </div>
+
+    <!-- Welcome message -->
+    <div class="welcome-message">
+        <p>Welcome, Admin! Manage your dashboard efficiently.</p>
+    </div>
+
+   
+    <div class="main-content">
+        <a href="{{ url_for('view_collection') }}">
+            <button class="btn">View Collection</button>
+        </a>
+
+        <a href="{{ url_for('admin_parcels') }}">
+            <button class="btn">View Parcel List</button>
+        </a>
+
+        <a href="{{ url_for('view_admin_database') }}">
+            <button class="btn">View Admin Database</button>
+        </a>
+    </div>
+</body>
+</html>

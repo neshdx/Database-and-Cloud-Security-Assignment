@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.637), rgba(0, 0, 0, 0.637)),url(image/backgroundmmu.jpg);
+    background-size: cover;
+    min-height: 605px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background-color: #85848488;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+
+.container .title{
+    font-size: 35px;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 5px 0;
+    color: white;
+
+}
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+    color: white;
+} 
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+form .user-details .input-box2{
+    margin-bottom: 15px;
+    margin-left: 340px;
+    margin-top:-100px;
+    width: calc(100% / 2 - 20px);
+    position:relative;
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin: 5px;
+
+}
+
+form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    height: 120px;  /* Increased height */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%;
+}
+
+
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px;
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+.user-details .input-box2 input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px;
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+.user-details .input-box select{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px;
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+
+
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #357b37;
+}
+
+p{
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+p a{
+    color: rgb(210, 246, 4);
+}

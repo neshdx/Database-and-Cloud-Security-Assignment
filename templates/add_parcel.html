@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/add_parcel.css" rel="stylesheet" type="text/css">
+    <title>Add Parcel</title>
+</head>
+<body>
+    <div class="top-container">
+        <h1>Add Parcel Details</h1>
+    </div>
+    <div class="main-content">
+        <form action="/add_parcel" method="POST">
+            <label for="parcel_id">Parcel ID:</label>
+            <input type="text" name="parcel_id" required>
+        
+            <label for="student_id">Student ID:</label>
+            <input type="text" name="student_id" required>
+        
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+        
+            <label for="student_contact">Student Contact:</label>
+            <input type="text" name="student_contact" required>
+        
+            <button class="btn" type="submit">Add Parcel</button>
+        </form>
+    
+        <a href="/courier">
+            <button class="btn">Back to Dashboard</button>
+        </a>
+        
+    </div>
+
+    
+</body>
+</html>

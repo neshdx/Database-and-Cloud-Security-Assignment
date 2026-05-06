@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/courier_dashboard.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier Dashboard</title>
+</head>
+<body>
+    <!-- Top Container: Title & Logout Button -->
+    <div class="top-container">
+        <h1>Courier Dashboard</h1>
+        <a href="/logout">
+            <button class="logout-button">Logout</button>
+        </a>
+    </div>
+
+    <!-- Welcome Message -->
+    <div class="welcome-message">
+        <h1>Welcome, {{ courier.courier_name }}</h1>
+    </div>
+
+    <!-- Wrapper for Left (Buttons) and Right (Table) -->
+    <div class="content-wrapper">
+        <!-- Action Buttons on Left -->
+        <div class="main-content">
+            <a href="/add_parcel">
+                <button class="btn">Add Parcel</button>
+            </a>
+
+            <a href="{{ url_for('view_feedback') }}">
+                <button class="btn">View Feedback</button>
+            </a>
+        </div>
+
+        <!-- Parcel Table on Right -->
+        <div class="parcel-container">
+            <h2 class="h2">Your Parcels</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parcel ID</th>
+                        <th>Student Name</th>
+                        <th>Contact</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for parcel in parcels %}
+                    <tr>
+                        <td>{{ parcel.parcel_id }}</td>
+                        <td>{{ parcel.username }}</td>
+                        <td>{{ parcel.student_contact }}</td>
+                        <td class="action-buttons">
+                            <a href="{{ url_for('update_parcel', id=parcel.id) }}">
+                                <button class="edit-button">Edit</button>
+                            </a>
+                            <form action="{{ url_for('delete_parcel', id=parcel.id) }}" method="POST" onsubmit="return confirmDelete();">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- JavaScript for Confirmation -->
+    <script>
+        function confirmDelete() {
+            return confirm("Are you sure you want to delete this parcel?");
+        }
+    </script>
+</body>
+</html>

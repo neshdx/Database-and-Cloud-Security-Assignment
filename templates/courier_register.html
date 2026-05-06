@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/static/signup.css" type="text/css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier Registration</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Register as a Courier</div>
+        <form method="POST" action="/courier_register">
+            <div class="user-details">
+                <div class="input-box">
+                    <label for="courier_name">Name:</label><br>
+                    <input type="text" id="courier_name" name="courier_name" placeholder="Enter your full name" required><br><br>
+                </div>
+
+                <div class="input-box">
+                    <label for="courier_username">Username:</label><br>
+                    <input type="text" id="courier_username" name="courier_username" placeholder="Choose a username" required><br><br>
+                </div>
+
+                <div class="input-box">
+                    <label for="courier_contact">Contact:</label><br>
+                    <input type="text" id="courier_contact" name="courier_contact" placeholder="Enter your contact number" required><br><br>
+                </div>
+
+                <div class="input-box">
+                    <label for="courier_password">Password:</label><br>
+                    <input type="password" id="courier_password" name="courier_password" placeholder="Create a password" required><br><br>
+                </div>
+
+
+
+                <div class="input-box">
+                    <label for="courier_address">Address:</label><br>
+                    <textarea id="courier_address" name="courier_address" placeholder="Enter your address" required></textarea><br><br>
+                </div>
+                <button type="submit">Register</button>
+            </div>
+        </form>
+        <p>Already have an account? <a href="/courier_login">Login here</a></p>
+    </div>
+    
+</body>
+</html>

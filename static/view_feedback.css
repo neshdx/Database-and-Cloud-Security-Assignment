@@ -1,0 +1,129 @@
+/* --- Reset Default Styling --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Background Styling --- */
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url(image/backgroundmmu.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+/* --- Top Container (Fixed Like Other Pages) --- */
+.top-container {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.top-container h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Copperplate, Papyrus, fantasy;
+}
+
+/* --- Main Content Box (Glassmorphism) --- */
+.main-content {
+    margin-top: 50px;
+    padding: 30px;
+    width: 95%;
+    max-width: 900px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.main-content h1{
+    font-size: 30px;
+    color: white;
+}
+
+.main-content:hover {
+    transform: scale(1.02);
+}
+
+/* --- Table Styling --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+th {
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Button Styling --- */
+.btn {
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(90deg, #0056b3, #003d82);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 768px) {
+    .main-content {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    th, td {
+        font-size: 14px;
+    }
+}

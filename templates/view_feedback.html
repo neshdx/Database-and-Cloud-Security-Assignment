@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/view_feedback.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Feedback</title>
+</head>
+<body>
+{% block content %}
+<div class="top-container">
+    <h2>Feedback List</h2>
+</div>
+<div class="main-content">
+    <h1>Feedback List Of Users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Phone Number</th>
+                <th>Feedback</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for feedback in feedbacks %}
+            <tr>
+                <td>{{ feedback.username }}</td>
+                <td>{{ feedback.phone_number }}</td>
+                <td>{{ feedback.message }}</td>
+                <td>{{ feedback.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    {# Add Back to Dashboard button with conditional URL #}
+    <div class="button-container">
+        <a href="{{ url_for('staff_dashboard' if session.role == 'Staff' else 'courier') }}">
+            <button class="btn">Back to Dashboard</button>
+        </a>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

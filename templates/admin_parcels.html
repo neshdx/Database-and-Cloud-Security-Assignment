@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/admin_parcels.css" rel="stylesheet" type="text/css">
+    <title>Admin - View Parcels</title>
+</head>
+<body>
+    <div class="top-container">
+        <h1>Admin: Parcel List</h1>
+    </div>
+    <div class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Parcel ID</th>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>User Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for parcel in parcels %}
+                <tr>
+                    <td>{{ parcel.parcel_id }}</td>
+                    <td>{{ parcel.student_id }}</td>
+                    <td>{{ parcel.username }}</td>
+                    <td>{{ parcel.student_contact }}</td>
+                    <td>
+                        <form action="{{ url_for('add_to_system', parcel_id=parcel.id) }}" method="post">
+                            <button type="submit">Add to System</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/admin_dashboard">
+            <button class="btn">Back to Dashboard</button>
+        </a>
+
+    </div>
+    
+</body>
+</html>

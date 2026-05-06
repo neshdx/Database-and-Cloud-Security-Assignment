@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/admin_collection.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Collection</title>
+</head>
+<body>
+    <div class="top-container">
+        <h1>View Collection</h1>
+    </div>
+    <div class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Collection Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in collection_data %}
+                <tr>
+                    <td>{{ data.username }}</td>
+                    <td>{{ data.collected }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('admin_dashboard') }}">
+            <button class="btn">Back to Dashboard</button>
+        </a>
+    </div>
+
+
+    
+
+
+</body>
+</html>

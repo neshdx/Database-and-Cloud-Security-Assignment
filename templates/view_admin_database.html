@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/admin_database.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Admin Database</title>
+</head>
+<body>
+    <div class="top-container">
+        <h1>Parcel Data</h1>
+    </div>
+    <div class="main-content">
+        <div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Parcel ID</th>
+                        <th>User ID</th>
+                        <th>Username</th>
+                        <th>User Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for parcel in parcels %}
+                    <tr>
+                        <td>{{ parcel.parcel_id }}</td>
+                        <td>{{ parcel.user_id }}</td>
+                        <td>{{ parcel.username }}</td>
+                        <td>{{ parcel.user_contact }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    
+        <a href="/generate_pdf_report" target="_blank">
+            <button class="btn">Generate Report</button>
+        </a>
+        <a href="/admin_dashboard">
+            <button class="btn">Back to Dashboard</button>
+        </a>
+    </div>
+    
+    
+</body>
+</html>

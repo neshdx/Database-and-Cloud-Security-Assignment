@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+/* --- Background Styling with Your Image --- */
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url(image/backgroundmmu.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+/* --- Top Navigation Bar --- */
+.top-container {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Dashboard Title --- */
+.top-container h1 {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: Copperplate, Papyrus, fantasy;
+}
+
+/* --- Main Content Container (Glassmorphism) --- */
+.main-content {
+    margin-top: 50px;
+    padding: 40px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.main-content:hover {
+    transform: scale(1.02);
+}
+
+/* --- Table Styling --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+th {
+    background: rgba(0, 123, 255, 0.8);
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+/* --- Alternate Row Coloring --- */
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Button Styling --- */
+.btn {
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(90deg, #0056b3, #003d82);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 600px) {
+    .main-content {
+        width: 90%;
+        padding: 20px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}

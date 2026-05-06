@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="static/view_parcel.css" rel="stylesheet" type="text/css">
+    <title>{{ role }} - View Parcels</title>
+</head>
+<body>
+    <div class="top-container">
+        <h1> Parcel List</h1>
+    </div>
+    <div class="main-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Parcel ID</th>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>User Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for parcel in parcels %}
+                <tr>
+                    <td>{{ parcel.parcel_id }}</td>
+                    <td>{{ parcel.student_id }}</td>
+                    <td>{{ parcel.username }}</td> <!-- Changed from parcel.student_name to parcel.username -->
+                    <td>{{ parcel.student_contact }}</td>
+                    <td>
+                        <form action="{{ url_for('send_notification', parcel_id=parcel.id) }}" method="post">
+                            <button type="submit">Send Notification</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table>
+    
+        <a href="{{ url_for('staff_dashboard') }}">
+            <button class="btn">Back to Dashboard</button>
+        </a>
+    </div>
+    
+</body>
+</html>

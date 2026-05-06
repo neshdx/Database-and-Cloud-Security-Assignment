@@ -1,0 +1,127 @@
+/* --- Reset Default Styling --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Background Styling --- */
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url(image/backgroundmmu.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+/* --- Top Container (Fixed Like Other Pages) --- */
+.top-container {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.top-container h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Copperplate, Papyrus, fantasy;
+}
+
+/* --- Main Content Box (Glassmorphism) --- */
+.main-content {
+    margin-top: 50px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.main-content:hover {
+    transform: scale(1.02);
+}
+
+/* --- Form Styling --- */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+label {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    background: linear-gradient(90deg,  #007BFF, #0056b3);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 15px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(90deg, #0056b3, #003d82);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 768px) {
+    .main-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    label, input, button {
+        font-size: 14px;
+    }
+}
