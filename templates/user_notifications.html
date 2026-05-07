@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Notifications</title>
 </head>
+
 <body>
+
     <h2>Your Notifications</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Message</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for notification in notifications %}
-        <tr>
-            <td>{{ notification.message }}</td>
-        </tr>
-        {% else %}
-        <tr>
-            <td colspan="2">No notifications found.</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+
+    <table border="1">
+
+        <thead>
+            <tr>
+                <th>Message</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for notification in notifications %}
+            <tr>
+                <td>{{ notification.message }}</td>
+            </tr>
+
+            {% else %}
+            <tr>
+                <td>No notifications found.</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+    </table>
 
 </body>
+
 </html>

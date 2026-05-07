@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link href="static/feedback_form.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
 </head>
+
 <body>
+
     <div class="top-container">
         <h2>Submit Feedback</h2>
     </div>
+
     <div class="main-content">
+
         <form method="POST">
+
+            <!-- ✅ CSRF FIX -->
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
             <h1>Give your feedback about the service!</h1>
+
             <div class="form-group">
                 <label>Phone Number:</label>
                 <input type="text" class="form-control" name="phone_number" required>
             </div>
+
             <div class="form-group">
                 <label>Feedback Message:</label>
                 <textarea class="form-control" name="message" rows="4" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit Feedback</button>
-        </form>
-        <a href="{{ url_for('student_dashboard') }}">
-            <button class="btn">Back to Dashboard</button>
-        </a>
-    </div>
-        
 
-    
+            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+
+        </form>
+
+        <a href="{{ url_for('student_dashboard') }}">
+            <button class="btn" type="button">Back to Dashboard</button>
+        </a>
+
+    </div>
+
 </body>
+
 </html>

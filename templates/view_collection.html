@@ -1,41 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href="static/admin_collection.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>View Collection</title>
+
+    <link href="{{ url_for('static', filename='admin_collection.css') }}" rel="stylesheet">
 </head>
+
 <body>
+
     <div class="top-container">
         <h1>View Collection</h1>
     </div>
+
     <div class="main-content">
-        <table>
+
+        <table border="1">
+
             <thead>
                 <tr>
                     <th>Username</th>
                     <th>Collection Status</th>
                 </tr>
             </thead>
+
             <tbody>
+
                 {% for data in collection_data %}
                 <tr>
                     <td>{{ data.username }}</td>
-                    <td>{{ data.collected }}</td>
+
+                    <!-- ✅ Better display -->
+                    <td>
+                        {% if data.collected == 1 %}
+                            Collected
+                        {% else %}
+                            Not Collected
+                        {% endif %}
+                    </td>
                 </tr>
                 {% endfor %}
+
             </tbody>
+
         </table>
+
         <a href="{{ url_for('admin_dashboard') }}">
-            <button class="btn">Back to Dashboard</button>
+            <button class="btn" type="button">Back to Dashboard</button>
         </a>
+
     </div>
 
-
-    
-
-
 </body>
+
 </html>

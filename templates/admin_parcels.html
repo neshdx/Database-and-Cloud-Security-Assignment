@@ -28,13 +28,14 @@
                     <td>{{ parcel.student_contact }}</td>
                     <td>
                         <form action="{{ url_for('add_to_system', parcel_id=parcel.id) }}" method="post">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <button type="submit">Add to System</button>
                         </form>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
-        </table>
+            </table>
         <a href="/admin_dashboard">
             <button class="btn">Back to Dashboard</button>
         </a>

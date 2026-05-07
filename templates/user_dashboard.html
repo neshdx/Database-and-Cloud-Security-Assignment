@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href="static/user_dashboard.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>User Dashboard</title>
+
+    <link href="{{ url_for('static', filename='user_dashboard.css') }}" rel="stylesheet">
 </head>
+
 <body>
+
     <div class="top-container">
         <h1>User Dashboard</h1>
-        <a href="/logout">
-            <button class="logout-button">Logout</button>
+
+        <a href="{{ url_for('logout') }}">
+            <button class="logout-button" type="button">Logout</button>
         </a>
     </div>
 
     <div class="welcome-message">
-        <h1>Welcome, {{ session['username'] }}!</h1>
+        <h1>Welcome, {{ session.get('username') }}!</h1>
     </div>
 
     <div class="main-content">
-        <a href="/view_notifications">
-            <button class="btn">View Notifications</button>
+
+        <a href="{{ url_for('view_notifications') }}">
+            <button class="btn" type="button">View Notifications</button>
         </a>
 
-        <a href="/collection">
-            <button class="btn">Collection</button>
+        <a href="{{ url_for('collection_page') }}">
+            <button class="btn" type="button">Collection</button>
         </a>
 
-        <a href="/submit_feedback">
-            <button class="btn">Submit Feedback</button>
+        <a href="{{ url_for('submit_feedback') }}">
+            <button class="btn" type="button">Submit Feedback</button>
         </a>
+
     </div>
+
 </body>
+
 </html>

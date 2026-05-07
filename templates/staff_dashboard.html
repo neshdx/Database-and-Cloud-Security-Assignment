@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href="static/user_dashboard.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Staff Dashboard</title>
+
+    <!-- ✅ Flask-safe static file -->
+    <link href="{{ url_for('static', filename='user_dashboard.css') }}" rel="stylesheet">
 </head>
+
 <body>
+
     <div class="top-container">
         <h1>Staff Dashboard</h1>
 
-        <a href="/logout">
-            <button class="logout-button">Logout</button>
+        <a href="{{ url_for('logout') }}">
+            <button class="logout-button" type="button">Logout</button>
         </a>
     </div>
 
-    <div class="welcome-message">     
+    <div class="welcome-message">
         <p>Welcome, Staff {{ username }}</p>
     </div>
 
-    
-    <div class= main-content>
-        <a href="/staff_parcels">
-            <button class="btn">View All Parcels</button>
+    <!-- ✅ FIXED CLASS SYNTAX -->
+    <div class="main-content">
+
+        <a href="{{ url_for('staff_parcels') }}">
+            <button class="btn" type="button">View All Parcels</button>
         </a>
 
         <a href="{{ url_for('view_feedback') }}">
-            <button class="btn">View Feedback</button>
+            <button class="btn" type="button">View Feedback</button>
         </a>
+
     </div>
+
 </body>
+
 </html>

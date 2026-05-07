@@ -9,37 +9,53 @@
 </head>
 
 <body>
-    {% block content %}
+
     <div class="top-container">
         <h2>Edit Parcel</h2>
     </div>
+
     <div class="main-content">
+
         <form method="POST">
+
+            <!-- ✅ CSRF FIX -->
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
             <div class="form-group">
                 <label>Parcel ID</label>
-                <input type="text" class="form-control" name="parcel_id" value="{{ parcel.parcel_id }}" required>
+                <input type="text" class="form-control" name="parcel_id"
+                       value="{{ parcel.parcel_id }}" required>
             </div>
+
             <div class="form-group">
                 <label>Student ID</label>
-                <input type="text" class="form-control" name="student_id" value="{{ parcel.student_id }}" required>
+                <input type="text" class="form-control" name="student_id"
+                       value="{{ parcel.student_id }}" required>
             </div>
+
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" class="form-control" name="username" value="{{ parcel.username }}" required>
+                <input type="text" class="form-control" name="username"
+                       value="{{ parcel.username }}" required>
             </div>
+
             <div class="form-group">
                 <label>Student Contact</label>
-                <input type="text" class="form-control" name="student_contact" value="{{ parcel.student_contact }}"
-                    required>
+                <input type="text" class="form-control" name="student_contact"
+                       value="{{ parcel.student_contact }}" required>
             </div>
+
             <button class="btn" type="submit">Update Parcel</button>
-            <a href="{{ url_for('courier') }}">
-                <button class="btn">Cancel</button>
-            </a>
+
         </form>
+
+        <!-- ✅ FIXED CANCEL BUTTON -->
+        <a href="{{ url_for('courier') }}">
+            <button class="btn" type="button">Cancel</button>
+        </a>
+
     </div>
-    {% endblock %}
+
 </body>
 
 </html>
-

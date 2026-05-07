@@ -1,53 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link href="/static/staff_signup.css" type="text/css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Registration</title>
 </head>
+
 <body>
+
     <div class="container">
-        <div class="title"> Staff Registration</div>
-            {% if error %}
+
+        <div class="title">Staff Registration</div>
+
+        {% if error %}
             <p style="color:red;">{{ error }}</p>
-            {% endif %}
+        {% endif %}
+
         <form method="POST">
+
+            <!-- ✅ CSRF FIX -->
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
             <div class="user-details">
+
                 <div class="input-box">
                     <label for="staff_email">Email:</label>
                     <input type="email" name="staff_email" id="staff_email" required>
                 </div>
 
                 <br>
+
                 <div class="input-box">
                     <label for="staff_id">Staff ID:</label>
                     <input type="text" name="staff_id" id="staff_id" required>
                 </div>
 
                 <br>
+
                 <div class="input-box">
                     <label for="staff_password">Password:</label>
                     <input type="password" name="staff_password" id="staff_password" required>
                 </div>
 
                 <br>
+
                 <div class="input-box">
                     <label for="staff_name">Name:</label>
                     <input type="text" name="staff_name" id="staff_name" required>
                 </div>
 
                 <br>
+
                 <div class="input-box">
                     <label for="staff_contact">Contact:</label>
                     <input type="text" name="staff_contact" id="staff_contact" required>
                 </div>
+
                 <br>
+
                 <button type="submit">Register</button>
+
             </div>
+
         </form>
-        <p>Already have an account? <a href="/staff_login">Login here</a></p>
+
+        <p>
+            Already have an account?
+            <a href="/staff_login">Login here</a>
+        </p>
+
     </div>
 
 </body>
+
 </html>

@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href="static/user_noti.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>User Notifications</title>
+
+    <link href="{{ url_for('static', filename='user_noti.css') }}" rel="stylesheet">
 </head>
+
 <body>
+
     <div class="top-container">
-        <h1>Welcome, {{  session['username'] }}</h1>
+        <h1>Welcome, {{ session.get('username') }}</h1>
     </div>
+
     <div class="title">
         <h2>Your Notifications</h2>
     </div>
+
     <div class="main-content">
+
         {% if notifications %}
+
             <ul>
+
                 {% for notification in notifications %}
                     <li>
-                        {{ notification.message }} ({{ notification.created_at.strftime('%Y-%m-%d %H:%M')}})
-                        {% if notification.parcel_id %}
-                            <!-- Collected button added here -->
-                            <form action="{{ url_for('mark_collected', parcel_id=notification.parcel_id) }}" method="post" style="display:inline;">
-                                <button type="submit">Collected ✅</button>
-                            </form>
+
+                        {{ notification.message }}
+
+                        {% if notification.created_at %}
+                            ({{ notification.created_at.strftime('%Y-%m-%d %H:%M') }})
+                        {% else %}
+                            (No date)
                         {% endif %}
+
+                        {% if notification.parcel_id %}
+
+                            <!-- ✅ CSRF FIX -->
+                            <form action="{{ url_for('mark_collected', id=notification.parcel_id) }}"
+                                  method="post"
+                                  style="display:inline;">
+
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+                                <button type="submit">Collected ✅</button>
+
+                            </form>
+
+                        {% endif %}
+
                     </li>
                 {% endfor %}
+
             </ul>
+
         {% else %}
             <p>No new notifications.</p>
         {% endif %}
-    
+
         <a href="{{ url_for('student_dashboard') }}">
-            <button class="btn">Back to Dashboard</button>
+            <button class="btn" type="button">Back to Dashboard</button>
         </a>
+
     </div>
 
-
-    
 </body>
+
 </html>

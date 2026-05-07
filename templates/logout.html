@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
     <title>Logged Out</title>
 </head>
+
 <body>
+
     <h1>You have been logged out successfully!</h1>
-    <a href="/templates/logout.html">Return to Home</a>
+
+    <!-- ✅ FIXED: proper Flask route -->
+    <a href="{{ url_for('home') }}">
+        Return to Home
+    </a>
+
 </body>
+
 </html>

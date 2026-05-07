@@ -7,19 +7,31 @@
     <title>Admin Login</title>
 </head>
 <body>
-    
+
     <form class="container" method="POST">
+
         <h1>Admin Login</h1>
+
         {% if error %}
         <p style="color: red;">{{ error }}</p>
         {% endif %}
+
+        <!-- ✅ CSRF FIX -->
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
         <label for="username">ID:</label>
         <input type="text" name="username" id="username" placeholder="Enter your username" required>
         <br>
+
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" placeholder="Enter your password" required>
         <br>
-        <button type="submit">Login</button>
+
+        <a href="/admin_dashboard">
+            <button type="submit">Login</button>
+        </a>
+        
+
     </form>
 
 </body>
